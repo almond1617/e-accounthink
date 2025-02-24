@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Accounthink</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar">
+        <h3>Menu</h3>
+        <ul>
+            <li onclick="showCategory('akuntansi-dasar')">Akuntansi Dasar</li>
+            <li onclick="showCategory('akuntansi-keuangan')">Akuntansi Keuangan</li>
+            <li onclick="showCategory('akuntansi-biaya')">Akuntansi Biaya</li>
+            <li onclick="showCategory('akuntansi-manajemen')">Akuntansi Manajemen</li>
+            <li onclick="showCategory('auditing')">Auditing</li>
+        </ul>
+    </div>
+
+    <!-- Konten Utama -->
+    <div class="content">
+        <input type="text" class="search-bar" placeholder="Cari catatan...">
+        
+        <h2>Selamat Datang di E-Learning Akuntansi</h2>
+        <p>Pilih materi dari menu untuk mulai belajar.</p>
+
+        <!-- Form Upload Catatan -->
+        <h3>Upload Catatan</h3>
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+            <label for="materi">Pilih Materi:</label>
+            <select name="materi" id="materi">
+                <option value="akuntansi-dasar">Akuntansi Dasar</option>
+                <option value="akuntansi-keuangan">Akuntansi Keuangan</option>
+                <option value="akuntansi-biaya">Akuntansi Biaya</option>
+                <option value="akuntansi-manajemen">Akuntansi Manajemen</option>
+                <option value="auditing">Auditing</option>
+            </select>
+            <input type="file" name="file" accept=".pdf, .jpg">
+            <button type="submit">Upload</button>
+        </form>
+
+        <!-- Tempat Menampilkan Catatan -->
+        <h3>Catatan Mahasiswa</h3>
+        <div id="notes-list">
+            <p>Pilih materi dari menu untuk melihat catatan.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
